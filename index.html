@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Eki! 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink: #FF6B9D;
+    --rose: #FF3C7B;
+    --gold: #FFD700;
+    --purple: #C77DFF;
+    --lavender: #E0AAFF;
+    --cream: #FFF5F8;
+    --deep: #2D0036;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: linear-gradient(135deg, #0D001A 0%, #1A0033 30%, #2D0046 60%, #1A0033 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  /* ===== PARTICLES ===== */
+  #particles-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+  }
+
+  .star-particle {
+    position: absolute;
+    animation: twinkle linear infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 1;
+  }
+
+  .age-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #FFA500);
+    color: #2D0036;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    animation: badgePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    box-shadow: 0 0 30px rgba(255,215,0,0.5);
+    letter-spacing: 1px;
+  }
+
+  @keyframes badgePop {
+    from { transform: scale(0) rotate(-10deg); opacity: 0; }
+    to { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  .hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 700;
+    line-height: 1.1;
+    animation: titleSlide 1s ease both 0.3s;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 20px rgba(255,107,157,0.6));
+  }
+
+  .title-line1 {
+    display: block;
+    background: linear-gradient(90deg, var(--lavender), var(--pink), var(--gold), var(--pink), var(--lavender));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleSlide 1s ease both 0.3s, shimmer 4s linear infinite 1.3s;
+  }
+
+  .title-line2 {
+    display: block;
+    background: linear-gradient(90deg, var(--gold), var(--pink), var(--lavender), var(--pink), var(--gold));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleSlide 1s ease both 0.5s, shimmer 4s linear infinite 1.5s;
+  }
+
+  @keyframes shimmer {
+    to { background-position: 200% center; }
+  }
+
+  @keyframes titleSlide {
+    from { transform: translateY(60px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 40px rgba(199,125,255,0.8), 0 0 80px rgba(199,125,255,0.4);
+    animation: nameGlow 2s ease both 0.8s;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+  }
+
+  @keyframes nameGlow {
+    from { transform: translateY(40px) scale(0.9); opacity: 0; filter: blur(10px); }
+    to { transform: translateY(0) scale(1); opacity: 1; filter: blur(0); }
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    color: var(--lavender);
+    font-style: italic;
+    animation: fadeIn 1s ease both 1.1s;
+    margin-bottom: 2.5rem;
+    font-family: 'Playfair Display', serif;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-hint {
+    animation: bounce 2s infinite 2s;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* ===== CAKE ===== */
+  .cake-container {
+    position: relative;
+    margin: 2rem auto;
+    width: 220px;
+    height: 220px;
+    animation: fadeIn 1s ease both 0.7s;
+  }
+
+  .cake-svg { width: 100%; height: 100%; filter: drop-shadow(0 0 30px rgba(255,107,157,0.5)); }
+
+  @keyframes flicker {
+    0%, 100% { transform: scaleY(1) scaleX(1); opacity: 1; }
+    25% { transform: scaleY(1.1) scaleX(0.9); opacity: 0.9; }
+    50% { transform: scaleY(0.95) scaleX(1.05); }
+    75% { transform: scaleY(1.05) scaleX(0.95); }
+  }
+
+  .flame { animation: flicker 0.3s ease-in-out infinite; transform-origin: bottom center; }
+  .flame2 { animation: flicker 0.35s ease-in-out infinite 0.1s; transform-origin: bottom center; }
+  .flame3 { animation: flicker 0.28s ease-in-out infinite 0.05s; transform-origin: bottom center; }
+
+  /* ===== SECTIONS ===== */
+  section {
+    position: relative;
+    padding: 5rem 1.5rem;
+    z-index: 1;
+  }
+
+  .section-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, var(--gold), var(--pink), var(--lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 15px rgba(255,215,0,0.3));
+  }
+
+  /* ===== WISH CARDS ===== */
+  .wish-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .wish-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,107,157,0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .wish-card.visible {
+    animation: cardReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes cardReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .wish-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,107,157,0.1) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  .wish-card:hover::before { opacity: 1; }
+
+  .wish-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255,107,157,0.8);
+    box-shadow: 0 20px 60px rgba(255,60,123,0.3), 0 0 40px rgba(199,125,255,0.2);
+  }
+
+  .wish-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    animation: iconFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes iconFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(5deg); }
+  }
+
+  .wish-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--pink);
+    font-style: italic;
+  }
+
+  .wish-card p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+  }
+
+  /* ===== LOVE LETTER ===== */
+  .love-letter {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .love-letter::before {
+    content: '♥';
+    position: absolute;
+    font-size: 20rem;
+    color: rgba(255,107,157,0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: heartbeat 3s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+  }
+
+  .love-letter p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.9;
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1;
+  }
+
+  .love-letter .highlight {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .love-letter .pink-text {
+    color: var(--pink);
+    font-weight: 600;
+  }
+
+  /* ===== QUOTE SECTION ===== */
+  .quote-block {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(255,107,157,0.1), rgba(199,125,255,0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255,107,157,0.2);
+    margin: 2rem 0;
+  }
+
+  .quote-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    color: var(--gold);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .quote-author {
+    font-size: 0.9rem;
+    color: var(--lavender);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ===== MILESTONE SECTION ===== */
+  .milestones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .milestone-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(199,125,255,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .milestone-item:hover {
+    background: rgba(199,125,255,0.1);
+    border-color: var(--purple);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(199,125,255,0.3);
+  }
+
+  .milestone-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gold), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    counter-increment: none;
+  }
+
+  .milestone-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.3rem;
+  }
+
+  /* ===== BUTTONS ===== */
+  .buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2.5rem 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+  }
+
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: inherit;
+  }
+
+  .btn:hover::after { opacity: 1; }
+  .btn:hover { transform: translateY(-4px) scale(1.05); }
+  .btn:active { transform: scale(0.97); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--rose), var(--pink));
+    color: white;
+    box-shadow: 0 8px 30px rgba(255,60,123,0.4);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #2D0036;
+    box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+  }
+
+  .btn-purple {
+    background: linear-gradient(135deg, var(--purple), #8B5CF6);
+    color: white;
+    box-shadow: 0 8px 30px rgba(199,125,255,0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,107,157,0.15);
+    box-shadow: 0 8px 30px rgba(255,107,157,0.3);
+  }
+
+  /* ===== CONFETTI BUTTON ===== */
+  #confetti-btn {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(255,215,0,0.4); }
+    50% { box-shadow: 0 8px 60px rgba(255,215,0,0.7), 0 0 80px rgba(255,215,0,0.3); }
+  }
+
+  /* ===== POEMS ===== */
+  .poem-box {
+    background: rgba(255,255,255,0.04);
+    border-left: 4px solid var(--pink);
+    border-radius: 0 16px 16px 0;
+    padding: 2rem 2.5rem;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .poem-box:hover {
+    background: rgba(255,107,157,0.08);
+    transform: translateX(5px);
+    box-shadow: -4px 0 30px rgba(255,107,157,0.3);
+  }
+
+  .poem-box p {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    line-height: 2;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ===== POPUP / MODAL ===== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal-box {
+    background: linear-gradient(135deg, #1A0033, #2D0046);
+    border: 1px solid var(--pink);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 30px 100px rgba(255,60,123,0.4), 0 0 60px rgba(199,125,255,0.2);
+    position: relative;
+  }
+
+  .modal-overlay.active .modal-box {
+    transform: scale(1);
+  }
+
+  .modal-box h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .modal-box p {
+    font-family: 'Playfair Display', serif;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem; right: 1.2rem;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover { color: white; }
+
+  /* ===== MUSIC TOGGLE ===== */
+  .music-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rose), var(--purple));
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 30px rgba(255,60,123,0.5);
+    transition: all 0.3s;
+    animation: musicPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes musicPulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(255,60,123,0.5); }
+    50% { box-shadow: 0 8px 60px rgba(255,60,123,0.8), 0 0 0 10px rgba(255,60,123,0.1); }
+  }
+
+  .music-btn:hover { transform: scale(1.15); }
+
+  /* ===== HEARTS FLOATING ===== */
+  .heart-float {
+    position: fixed;
+    pointer-events: none;
+    animation: heartFloat 3s ease-out forwards;
+    font-size: 1.5rem;
+    z-index: 999;
+  }
+
+  @keyframes heartFloat {
+    0% { transform: translateY(0) rotate(0deg) scale(0); opacity: 1; }
+    50% { transform: translateY(-150px) rotate(20deg) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-300px) rotate(-10deg) scale(0.5); opacity: 0; }
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    text-align: center;
+    margin: 2rem 0;
+    color: rgba(255,107,157,0.5);
+    font-size: 1.5rem;
+    letter-spacing: 8px;
+  }
+
+  /* ===== COUNTDOWN ===== */
+  .age-section {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .age-display {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 20vw, 12rem);
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--pink) 50%, var(--lavender) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 40px rgba(255,215,0,0.4));
+    animation: numberGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes numberGlow {
+    0%, 100% { filter: drop-shadow(0 0 40px rgba(255,215,0,0.4)); }
+    50% { filter: drop-shadow(0 0 80px rgba(255,215,0,0.8)) drop-shadow(0 0 120px rgba(255,107,157,0.4)); }
+  }
+
+  .age-years-label {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--lavender);
+    margin-top: -0.5rem;
+  }
+
+  /* ===== SEPARATOR LINE ===== */
+  .separator {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--pink), transparent);
+    margin: 2rem auto;
+    border-radius: 2px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255,107,157,0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 0.5rem;
+  }
+
+  footer .from-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--pink);
+    font-style: italic;
+  }
+
+  /* ===== CONFETTI ===== */
+  .confetti-piece {
+    position: fixed;
+    width: 10px;
+    height: 20px;
+    top: -30px;
+    animation: confettiFall linear forwards;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  @keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0.5; }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .love-letter { padding: 2rem 1.5rem; }
+    .modal-box { padding: 2rem 1.5rem; }
+    .wish-cards { grid-template-columns: 1fr; }
+    .buttons-row { flex-direction: column; align-items: center; }
+    .btn { width: 80%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Particles Background -->
+<div id="particles-container"></div>
+
+<!-- Music Button -->
+<button class="music-btn" id="music-btn" title="Play/Pause Music">🎵</button>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="age-badge">✨ Merayakan 29 Tahun Keindahan ✨</div>
+
+  <div class="cake-container">
+    <svg class="cake-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+      <!-- Plate -->
+      <ellipse cx="110" cy="185" rx="80" ry="12" fill="#FFB6C1" opacity="0.4"/>
+      <!-- Cake bottom layer -->
+      <rect x="30" y="140" width="160" height="48" rx="12" fill="#FF85A1"/>
+      <rect x="30" y="140" width="160" height="10" rx="6" fill="#FF6B9D"/>
+      <!-- Cake middle layer -->
+      <rect x="45" y="100" width="130" height="44" rx="10" fill="#FF6B9D"/>
+      <rect x="45" y="100" width="130" height="10" rx="5" fill="#FF3C7B"/>
+      <!-- Cake top layer -->
+      <rect x="65" y="68" width="90" height="36" rx="8" fill="#FF85A1"/>
+      <rect x="65" y="68" width="90" height="8" rx="4" fill="#FF6B9D"/>
+      <!-- Frosting drips bottom -->
+      <path d="M30 150 Q40 143 50 150 Q60 143 70 150 Q80 143 90 150 Q100 143 110 150 Q120 143 130 150 Q140 143 150 150 Q160 143 170 150 Q180 143 190 150" stroke="#FFF0F5" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <!-- Frosting drips mid -->
+      <path d="M45 110 Q55 103 65 110 Q75 103 85 110 Q95 103 105 110 Q115 103 125 110 Q135 103 145 110 Q155 103 165 110 Q175 103 175 110" stroke="#FFF0F5" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Stars on cake -->
+      <text x="60" y="165" font-size="14" text-anchor="middle">⭐</text>
+      <text x="110" y="165" font-size="14" text-anchor="middle">💕</text>
+      <text x="160" y="165" font-size="14" text-anchor="middle">⭐</text>
+      <text x="80" y="128" font-size="12" text-anchor="middle">✨</text>
+      <text x="140" y="128" font-size="12" text-anchor="middle">✨</text>
+      <!-- 29 on cake -->
+      <text x="110" y="130" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#FFF0F5" text-anchor="middle">29</text>
+      <!-- Candles -->
+      <rect x="82" y="46" width="10" height="24" rx="4" fill="#FFD700"/>
+      <rect x="106" y="40" width="10" height="30" rx="4" fill="#C77DFF"/>
+      <rect x="130" y="46" width="10" height="24" rx="4" fill="#FF6B9D"/>
+      <!-- Flames -->
+      <g class="flame" transform-origin="87 46">
+        <ellipse cx="87" cy="40" rx="5" ry="9" fill="#FFD700"/>
+        <ellipse cx="87" cy="38" rx="3" ry="6" fill="#FFF0A0"/>
+      </g>
+      <g class="flame2" transform-origin="111 40">
+        <ellipse cx="111" cy="33" rx="5" ry="10" fill="#FFB347"/>
+        <ellipse cx="111" cy="31" rx="3" ry="7" fill="#FFE080"/>
+      </g>
+      <g class="flame3" transform-origin="135 46">
+        <ellipse cx="135" cy="40" rx="5" ry="9" fill="#FF6B9D"/>
+        <ellipse cx="135" cy="38" rx="3" ry="6" fill="#FFB6D9"/>
+      </g>
+      <!-- Decorations -->
+      <circle cx="55" cy="160" r="5" fill="#FFD700" opacity="0.8"/>
+      <circle cx="75" cy="155" r="4" fill="#C77DFF" opacity="0.8"/>
+      <circle cx="150" cy="160" r="5" fill="#FFD700" opacity="0.8"/>
+      <circle cx="165" cy="155" r="4" fill="#FF85A1" opacity="0.8"/>
+      <circle cx="90" cy="118" r="4" fill="#FFD700" opacity="0.7"/>
+      <circle cx="130" cy="118" r="4" fill="#C77DFF" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="title-line1">Selamat</span>
+    <span class="title-line2">Ulang Tahun</span>
+  </h1>
+  <div class="hero-name">Eki Nurwahyu Wiliyani</div>
+  <p class="hero-subtitle">Semoga hari ini menjadi hari yang paling indah dalam hidupmu, Sayang 🌸</p>
+
+  <div class="buttons-row">
+    <button class="btn btn-primary" id="confetti-btn" onclick="launchConfetti()">🎊 Rayakan Bersama!</button>
+    <button class="btn btn-gold" onclick="openModal('wish1')">💌 Buka Pesan Cinta</button>
+    <button class="btn btn-purple" onclick="openModal('wish2')">✨ Harapan & Doa</button>
+  </div>
+
+  <div class="scroll-hint" onclick="document.getElementById('wishes').scrollIntoView({behavior:'smooth'})">
+    ↓ &nbsp; scroll untuk lebih banyak kejutan &nbsp; ↓
+  </div>
+</section>
+
+<!-- AGE SECTION -->
+<section class="age-section">
+  <div class="section-inner">
+    <div class="age-display">29</div>
+    <div class="age-years-label">tahun penuh keindahan & keberkahan</div>
+    <div class="separator"></div>
+    <p style="font-family:'Playfair Display',serif; font-size:1.1rem; color:rgba(255,255,255,0.75); line-height:1.9;">
+      29 tahun bukan sekadar angka — ini adalah <span style="color:var(--gold); font-style:italic;">mahkota</span> yang kamu kenakan dengan penuh keanggunan.
+      Setiap tahun yang berlalu membentukmu menjadi wanita yang luar biasa, bijaksana, dan semakin cantik.
+    </p>
+    <div class="milestones">
+      <div class="milestone-item">
+        <span class="milestone-number">29</span>
+        <div class="milestone-label">Tahun Kehidupan</div>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-number">∞</span>
+        <div class="milestone-label">Cinta Untukmu</div>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-number">🌟</span>
+        <div class="milestone-label">Impian Terwujud</div>
+      </div>
+      <div class="milestone-item">
+        <span class="milestone-number">💐</span>
+        <div class="milestone-label">Kebahagiaan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISHES SECTION -->
+<section id="wishes" style="padding-top: 2rem;">
+  <div class="section-inner">
+    <h2 class="section-title">💝 Ucapan & Doa Terbaik</h2>
+    <p style="text-align:center; color:rgba(255,255,255,0.6); margin-bottom:2rem; font-size:0.95rem;">Setiap kata ini tertulis dari lubuk hati yang paling dalam, khusus untukmu</p>
+
+    <div class="wish-cards" id="wish-cards">
+      <div class="wish-card">
+        <span class="wish-icon">🌸</span>
+        <h3>Kecantikan Abadi</h3>
+        <p>Semoga kecantikanmu yang terpancar bukan hanya dari luar, tapi dari hati yang tulus, jiwa yang hangat, dan senyum yang selalu menerangi hari-hari orang di sekitarmu. Kamu adalah bunga yang tidak pernah layu, Eki.</p>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">💪</span>
+        <h3>Kesehatan & Kekuatan</h3>
+        <p>Di usia 29 ini, semoga tubuhmu selalu sehat dan kuat, pikiranmu selalu jernih dan tenang, dan semangatmu tidak pernah padam. Kamu berhak menikmati hidup dengan tubuh yang prima dan jiwa yang bahagia.</p>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">🚀</span>
+        <h3>Karier & Mimpi</h3>
+        <p>Semoga semua mimpi dan cita-citamu terwujud satu per satu. Setiap kerja keras yang kamu lakukan tidak akan sia-sia. Langkahmu menuju puncak terus melambung, dan nama Eki Nurwahyu Wiliyani akan dikenang sebagai wanita tangguh yang luar biasa.</p>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">❤️</span>
+        <h3>Cinta Yang Tulus</h3>
+        <p>Semoga hatimu selalu dipenuhi cinta yang tulus — cinta dari keluarga, dari sahabat, dan dari orang yang selalu mencintaimu sepenuh hati. Kamu pantas mendapatkan cinta terbaik di dunia ini.</p>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">☀️</span>
+        <h3>Kebahagiaan Sejati</h3>
+        <p>Semoga setiap hari adalah hari yang indah untukmu. Semoga tawamu lebih banyak dari air matamu, dan semoga kebahagiaan selalu mengiringi setiap langkah yang kamu ambil dalam hidupmu.</p>
+      </div>
+      <div class="wish-card">
+        <span class="wish-icon">🙏</span>
+        <h3>Keberkahan Berlimpah</h3>
+        <p>Semoga Allah SWT senantiasa memberkahi hidupmu, melindungimu dari segala mara bahaya, mengabulkan setiap doa yang kamu panjatkan, dan memberikanmu kemudahan di setiap urusan yang kamu jalani.</p>
+      </div>
+    </div>
+
+    <div class="buttons-row">
+      <button class="btn btn-primary" onclick="openModal('poem')">📜 Baca Puisi Untukmu</button>
+      <button class="btn btn-outline" onclick="openModal('surprise')">🎁 Ada Kejutan!</button>
+      <button class="btn btn-purple" onclick="showHearts()">💕 Kirim Cinta</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOVE LETTER -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title">💌 Surat Dari Hati</h2>
+    <div class="love-letter">
+      <p>
+        Untuk <span class="highlight">Eki Nurwahyu Wiliyani</span> yang aku cintai,<br><br>
+        Di hari yang istimewa ini, aku ingin kamu tahu betapa <span class="pink-text">berharga</span>-nya kehadiranmu dalam hidupku.
+        Setiap momen bersamamu adalah hadiah yang tidak ternilai harganya.<br><br>
+        Kamu adalah wanita yang tidak hanya <span class="highlight">cantik di luar</span>, tapi juga indah di dalam.
+        Kebaikanmu, perhatianmu, dan caramu tersenyum selalu membuat dunia terasa lebih cerah.<br><br>
+        Di usia 29 ini, semoga kamu semakin <span class="pink-text">percaya diri</span>, semakin bahagia, dan semakin tahu betapa
+        banyak orang yang menyayangimu dengan sepenuh hati.<br><br>
+        Kamu bukan hanya wanita biasa — kamu adalah <span class="highlight">luar biasa</span>. Dan aku sangat beruntung mengenalmu.<br><br>
+        Selamat Ulang Tahun yang ke-29, Sayang. Semoga ini menjadi tahun terbaik dalam hidupmu. 🌹
+      </p>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="quote-block">
+      <div class="quote-text">"Seperti bulan yang selalu bersinar di malam yang gelap, begitulah kamu — selalu menjadi cahaya bagi semua yang ada di sekitarmu."</div>
+      <div class="quote-author">— dengan sepenuh hati ❤️</div>
+    </div>
+  </div>
+</section>
+
+<!-- POEMS SECTION -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-title">🌹 Puisi Untukmu</h2>
+
+    <div class="poem-box">
+      <p>
+        Di hari ini langit turut bersuka cita,<br>
+        Bintang-bintang menari menyambut namamu,<br>
+        Eki Nurwahyu Wiliyani, bidadari dunia,<br>
+        Selamat menapak 29 tahun perjalananmu.
+      </p>
+    </div>
+
+    <div class="poem-box">
+      <p>
+        29 tahun kau tumbuh dengan penuh kasih,<br>
+        Menjadi sosok yang kuat namun lembut di hati,<br>
+        Setiap langkahmu membawa keindahan dan faedah,<br>
+        Semoga hari ini menjadi hari yang paling berarti.
+      </p>
+    </div>
+
+    <div class="poem-box">
+      <p>
+        Tak ada kata yang cukup untuk melukis dirimu,<br>
+        Seperti puisi terindah yang pernah ada,<br>
+        Semoga hidupmu selalu penuh warna dan cahaya,<br>
+        Dan kebahagiaan tak pernah jauh darimu, Eki sayang.
+      </p>
+    </div>
+
+    <div class="buttons-row">
+      <button class="btn btn-primary" onclick="launchConfetti()">🎉 Rayakan!</button>
+      <button class="btn btn-gold" onclick="openModal('wish3')">🌟 Pesan Spesial</button>
+      <button class="btn btn-purple" onclick="showHearts()">💖 Beri Cinta</button>
+      <button class="btn btn-outline" onclick="openModal('wish4')">🎂 Ucapan HBD</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>🎂 Happy 29th Birthday, Eki! 🎂</p>
+  <p>✨ Eki Nurwahyu Wiliyani ✨</p>
+  <br>
+  <div class="from-text">dibuat dengan penuh cinta & ketulusan ❤️ dari Suamimu</div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-wish1">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('wish1')">✕</button>
+    <h2>💌 Pesan Cinta</h2>
+    <p>Eki Sayang, setiap hari bersamamu adalah keajaiban. Senyummu adalah matahariku, tawamu adalah musikku, dan kamu adalah alasan terbesar aku bersyukur setiap hari. Di hari ulang tahunmu yang ke-29 ini, aku ingin kamu tahu bahwa cintaku untukmu tidak akan pernah berkurang — justru semakin dalam, semakin tulus, dan semakin kuat setiap harinya.</p>
+    <p style="color:var(--gold); font-style:italic;">Selamat Ulang Tahun, Belahan Hatiku 🌹</p>
+    <button class="btn btn-primary" onclick="closeModal('wish1'); launchConfetti()">🎊 Terima Kasih!</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-wish2">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('wish2')">✕</button>
+    <h2>🙏 Harapan & Doa</h2>
+    <p>Ya Allah, di hari yang istimewa ini, aku panjatkan doa yang tulus untuk Eki Nurwahyu Wiliyani — wanita yang sangat aku sayangi. Semoga Engkau senantiasa melindunginya, memberikannya kesehatan yang sempurna, rezeki yang berlimpah, kebahagiaan yang abadi, dan kehidupan yang selalu penuh keberkahan.</p>
+    <p style="color:var(--lavender); font-style:italic;">"Semoga Allah memberkahimu dalam kebahagiaan dan mengumpulkan atasmu kebaikan" 🌙</p>
+    <button class="btn btn-purple" onclick="closeModal('wish2')">Aamiin 💜</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-poem">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('poem')">✕</button>
+    <h2>📜 Puisi Spesial</h2>
+    <p style="font-family:'Dancing Script',cursive; font-size:1.15rem; line-height:2.2;">
+      Wahai Eki yang tercinta,<br>
+      Kamu adalah puisi terindah yang pernah kutulis,<br>
+      Setiap baris hidupmu penuh makna,<br>
+      Dan aku ingin menjadi bagian dari kisahmu — selamanya.<br><br>
+      <span style="color:var(--gold);">Selamat ulang tahun ke-29 yang penuh berkah 🌸</span>
+    </p>
+    <button class="btn btn-primary" onclick="closeModal('poem'); showHearts()">💕 Kirim Cinta</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-surprise">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('surprise')">✕</button>
+    <h2>🎁 Surprise!</h2>
+    <p style="font-size:4rem; margin: 1rem 0;">🎂🎊✨🌹💎</p>
+    <p>Kejutan terbesar bukan barang mewah atau hadiah mahal — kejutan terbesar adalah betapa banyak orang yang mencintai dan menyayangimu, Eki. Kamu dikelilingi oleh cinta yang tulus, dan itu adalah kekayaan yang paling berharga di dunia ini.</p>
+    <p style="color:var(--gold); font-style:italic; margin-top:1rem;">Kamu sangat berharga, Eki! ✨</p>
+    <button class="btn btn-gold" onclick="closeModal('surprise'); launchConfetti()">🎉 Wow, Makasih!</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-wish3">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('wish3')">✕</button>
+    <h2>🌟 Pesan Spesial</h2>
+    <p>Di usiamu yang ke-29 ini, ingatlah selalu: Kamu cukup. Kamu kuat. Kamu cantik. Kamu berharga. Dan kamu sangat dicintai. Jangan pernah meragukan betapa luar biasanya dirimu. Setiap tantangan yang pernah kamu hadapi hanya membuktikan betapa tangguhnya kamu.</p>
+    <p style="color:var(--pink); font-style:italic;">Teruslah bersinar, Eki! Dunia butuh cahayamu. ☀️</p>
+    <button class="btn btn-gold" onclick="closeModal('wish3'); showHearts()">💕 Makasih Banyak!</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-wish4">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('wish4')">✕</button>
+    <h2>🎂 Happy Birthday!</h2>
+    <p style="font-size:3rem; margin: 0.5rem 0;">🥳🎉🎊🎈🎁</p>
+    <p>HAPPY BIRTHDAY EEEKIIIII!! 🎂<br><br>29 tahun dan kamu makin kece, makin keren, makin cantik, makin sukses! Semoga semua yang kamu impikan segera terwujud. Keep shining, keep smiling, dan teruslah menjadi versi terbaik dari dirimu sendiri!</p>
+    <p style="color:var(--gold);">HBD ke-29 yang penuh cinta! 🌟</p>
+    <button class="btn btn-primary" onclick="closeModal('wish4'); launchConfetti()">🎊 Yeyyyy!</button>
+  </div>
+</div>
+
+<script>
+// === PARTICLES ===
+const container = document.getElementById('particles-container');
+const colors = ['#FF6B9D','#FFD700','#C77DFF','#FF3C7B','#E0AAFF','#FF85A1','#FFA0C8'];
+const emojis = ['💕','🌸','⭐','✨','💖','🌹','💎','🎀','🌟'];
+
+function createParticle() {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random() * 10 + 4;
+  p.style.cssText = `
+    width:${size}px; height:${size}px;
+    left:${Math.random()*100}%;
+    background:${colors[Math.floor(Math.random()*colors.length)]};
+    animation-duration:${Math.random()*10+8}s;
+    animation-delay:${Math.random()*5}s;
+    opacity:0;
+  `;
+  container.appendChild(p);
+  setTimeout(() => p.remove(), 18000);
+}
+
+function createStar() {
+  const s = document.createElement('div');
+  s.className = 'star-particle';
+  s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  s.style.cssText = `
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    font-size:${Math.random()*16+10}px;
+    animation-duration:${Math.random()*4+2}s;
+    animation-delay:${Math.random()*5}s;
+    position:absolute;
+  `;
+  container.appendChild(s);
+  setTimeout(() => s.remove(), 10000);
+}
+
+setInterval(createParticle, 400);
+setInterval(createStar, 600);
+for(let i = 0; i < 15; i++) createParticle();
+for(let i = 0; i < 8; i++) createStar();
+
+// === SCROLL REVEAL ===
+const cards = document.querySelectorAll('.wish-card');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if(entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+        entry.target.style.animationDelay = '0s';
+      }, idx * 120);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(c => observer.observe(c));
+
+// === CONFETTI ===
+function launchConfetti() {
+  const confettiColors = ['#FF6B9D','#FFD700','#C77DFF','#FF3C7B','#00D4FF','#FF8C00','#7CFC00'];
+  for(let i = 0; i < 80; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'confetti-piece';
+      const color = confettiColors[Math.floor(Math.random()*confettiColors.length)];
+      const size = Math.random()*12+6;
+      const isCircle = Math.random() > 0.5;
+      c.style.cssText = `
+        left:${Math.random()*100}vw;
+        width:${size}px; height:${isCircle ? size : size*2}px;
+        background:${color};
+        border-radius:${isCircle ? '50%' : '3px'};
+        animation-duration:${Math.random()*2+2}s;
+        animation-delay:0s;
+      `;
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }, i * 30);
+  }
+}
+
+// === HEARTS ===
+function showHearts() {
+  const heartEmojis = ['💕','💖','💗','💓','❤️','🌹','💝'];
+  for(let i = 0; i < 12; i++) {
+    setTimeout(() => {
+      const h = document.createElement('div');
+      h.className = 'heart-float';
+      h.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+      h.style.cssText = `
+        left:${Math.random()*80+10}%;
+        bottom:10%;
+        font-size:${Math.random()*16+16}px;
+        animation-duration:${Math.random()*1+2.5}s;
+      `;
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 3500);
+    }, i * 120);
+  }
+}
+
+// === MODAL ===
+function openModal(id) {
+  document.getElementById('modal-'+id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+  document.getElementById('modal-'+id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', function(e) {
+    if(e.target === this) {
+      this.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+// === MUSIC (Simulated) ===
+const musicBtn = document.getElementById('music-btn');
+let playing = false;
+musicBtn.addEventListener('click', () => {
+  playing = !playing;
+  musicBtn.textContent = playing ? '🔊' : '🎵';
+  musicBtn.style.background = playing
+    ? 'linear-gradient(135deg, #FFD700, #FFA500)'
+    : 'linear-gradient(135deg, #FF3C7B, #C77DFF)';
+  if(playing) { showHearts(); launchConfetti(); }
+});
+
+// === AUTO LAUNCH on load ===
+window.addEventListener('load', () => {
+  setTimeout(() => launchConfetti(), 1500);
+  setTimeout(() => showHearts(), 2500);
+});
+
+// === Click anywhere sparkle ===
+document.addEventListener('click', function(e) {
+  if(e.target.tagName === 'BUTTON' || e.target.closest('.modal-overlay')) return;
+  const spark = document.createElement('div');
+  spark.style.cssText = `
+    position:fixed; left:${e.clientX-10}px; top:${e.clientY-10}px;
+    font-size:1.5rem; pointer-events:none; z-index:9999;
+    animation: heartFloat 1.5s ease forwards;
+  `;
+  spark.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  document.body.appendChild(spark);
+  setTimeout(() => spark.remove(), 1600);
+});
+</script>
+</body>
+</html>
